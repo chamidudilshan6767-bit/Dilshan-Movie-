@@ -1,14 +1,30 @@
 {
   "liveEvents": [
     {
-      "title": "Test Live Stream",
+      "title": "Live Sports Stream 1",
       "tournament": "Global Sports",
       "dateTime": "Live Now",
       "streamUrl": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+    },
+    {
+      "title": "Live Sports Stream 2",
+      "tournament": "HD Channel",
+      "dateTime": "Live Now",
+      "streamUrl": "https://cph-p2p-ms.akamaized.net/hls/live/2000341/test/master.m3u8"
     }
   ],
   "channels": [
     { "name": "A Sports", "type": "Sports", "streamUrl": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
-    { "name": "Sky Sports Cricket", "type": "Cricket", "streamUrl": "https://cph-p2p-ms.akamaized.net/hls/live/2000341/test/master.m3u8" }
+    { "name": "Sky Sports Cricket", "type": "Cricket", "streamUrl": "https://cph-p2p-ms.akamaized.net/hls/live/2000341/test/master.m3u8" },
+    { "name": "Bein Sports 1", "type": "Sports", "streamUrl": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { "name": "Bein Sports 2", type: "Sports", "streamUrl": "https://cph-p2p-ms.akamaized.net/hls/live/2000341/test/master.m3u8" },
+    { "name": "Bein Sports 3", "type": "Sports", "streamUrl": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { "name": "TNT Sports 2", "type": "Sports", "streamUrl": "https://cph-p2p-ms.akamaized.net/hls/live/2000341/test/master.m3u8" },
+    { "name": "TNT Sports 3", "type": "Sports", "streamUrl": "https://cph-p2p-ms.akamaized.net/hls/live/2000341/test/master.m3u8" },
+    { "name": "TNT Sports 4", "type": "Sports", "streamUrl": "https://cph-p2p-ms.akamaized.net/hls/live/2000341/test/master.m3u8" },
+    { "name": "FanCode Stream 1", "type": "Sports", "streamUrl": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { "name": "FanCode Stream 2", "type": "Sports", "streamUrl": "https://cph-p2p-ms.akamaized.net/hls/live/2000341/test/master.m3u8" },
+    { "name": "FIFA+ US", "type": "Sports", "streamUrl": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { "name": "F1 TV", "type": "Sports", "streamUrl": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" }
   ]
 }
