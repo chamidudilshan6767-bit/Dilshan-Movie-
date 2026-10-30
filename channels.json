@@ -1,0 +1,14 @@
+{
+  "liveEvents": [
+    {
+      "title": "Test Live Stream",
+      "tournament": "Global Sports",
+      "dateTime": "Live Now",
+      "streamUrl": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+    }
+  ],
+  "channels": [
+    { "name": "A Sports", "type": "Sports", "streamUrl": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" },
+    { "name": "Sky Sports Cricket", "type": "Cricket", "streamUrl": "https://cph-p2p-ms.akamaized.net/hls/live/2000341/test/master.m3u8" }
+  ]
+}
