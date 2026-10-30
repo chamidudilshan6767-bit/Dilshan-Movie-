@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dilshan Movies</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #121215;
+            color: #ffffff;
+            padding-bottom: 30px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 20px;
+            background-color: #1a1a1f;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .app-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        .category-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 14px;
+            color: #ffffff;
+        }
+
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .movie-card {
+            background-color: #22222b;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .movie-card:active {
+            transform: scale(0.96);
+        }
+
+        .movie-poster {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #2a2a35;
+        }
+
+        .movie-info {
+            padding: 12px;
+        }
+
+        .movie-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #ffffff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .movie-genre {
+            font-size: 12px;
+            color: #9e9ea8;
+            margin-top: 4px;
+        }
+
+        #player-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #video-player {
+            width: 95%;
+            max-height: 60vh;
+            border-radius: 8px;
+            background: #000;
+        }
+
+        .close-player {
+            margin-top: 20px;
+            background: #e55353;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="app-title">Dilshan Movies</div>
+    </header>
+
+    <div class="container">
+        <div class="category-title">Trending Movies</div>
+        <div class="movie-grid" id="movies-list">
+            Loading movies...
+        </div>
+    </div>
+
+    <div id="player-modal">
+        <video id="video-player" controls autoplay playsinline></video>
+        <button class="close-player" onclick="closePlayer()">Close Player</button>
+    </div>
+
+    <script>
+        // Sample Movie Data (පස්සෙ මේක GitHub JSON එකකට මාරු කරගන්න පුළුවන්)
+        const moviesData = [
+            {
+                title: "Big Buck Bunny",
+                genre: "Animation / Comedy",
+                poster: "https://upload.wikimedia.org/wikipedia/commons/c/c5/Big_buck_bunny_poster_big.jpg",
+                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+            },
+            {
+                title: "Elephant Dream",
+                genre: "Sci-Fi / Animation",
+                poster: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Elephants_Dream_poster.jpg/800px-Elephants_Dream_poster.jpg",
+                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+            },
+            {
+                title: "For Bigger Blazes",
+                genre: "Action / Trailer",
+                poster: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500",
+                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+            },
+            {
+                title: "Tears of Steel",
+                genre: "Sci-Fi / Action",
+                poster: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Tears_of_Steel_poster.jpg/800px-Tears_of_Steel_poster.jpg",
+                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"
+            }
+        ];
+
+        function loadMovies() {
+            const container = document.getElementById('movies-list');
+            container.innerHTML = "";
+
+            moviesData.forEach((movie, index) => {
+                container.innerHTML += `
+                    <div class="movie-card" onclick="openPlayer('${movie.videoUrl}')">
+                        <img src="${movie.poster}" class="movie-poster" alt="${movie.title}">
+                        <div class="movie-info">
+                            <div class="movie-title">${movie.title}</div>
+                            <div class="movie-genre">${movie.genre}</div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        loadMovies();
+
+        function openPlayer(url) {
+            const video = document.getElementById('video-player');
+            document.getElementById('player-modal').style.display = 'flex';
+            video.src = url;
+            video.play().catch(e => console.log("Auto-play error:", e));
+        }
+
+        function closePlayer() {
+            const video = document.getElementById('video-player');
+            video.pause();
+            video.src = '';
+            document.getElementById('player-modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
