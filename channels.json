@@ -1,28 +1,28 @@
 {
   "liveEvents": [
     {
-      "title": "Live Match 1",
-      "tournament": "International Friendly",
-      "dateTime": "Live Now",
-      "streamUrl": "https://cph-p2p-ms.akamaized.net/hls/live/2000341/test/master.m3u8"
+      "title": "NASA TV Live",
+      "tournament": "Space Live Stream",
+      "dateTime": "Live 24/7",
+      "streamUrl": "https://ntv1.akamaized.net/hls/live/2014075/NASA-TV-1/master.m3u8"
     },
     {
-      "title": "Live Match 2",
-      "tournament": "World Series",
-      "dateTime": "Live Now",
-      "streamUrl": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+      "title": "Red Bull TV",
+      "tournament": "Extreme Sports",
+      "dateTime": "Live 24/7",
+      "streamUrl": "https://rbmn-live.akamaized.net/hls/live/591070/GEO_RBMN_GLOBAL_HLS/master.m3u8"
     }
   ],
   "channels": [
     {
-      "name": "Sports Channel 1",
-      "type": "Sports",
-      "streamUrl": "https://cph-p2p-ms.akamaized.net/hls/live/2000341/test/master.m3u8"
+      "name": "NASA TV",
+      "type": "Science & Space",
+      "streamUrl": "https://ntv1.akamaized.net/hls/live/2014075/NASA-TV-1/master.m3u8"
     },
     {
-      "name": "Sports Channel 2",
-      "type": "Cricket",
-      "streamUrl": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+      "name": "Red Bull Sports",
+      "type": "Sports",
+      "streamUrl": "https://rbmn-live.akamaized.net/hls/live/591070/GEO_RBMN_GLOBAL_HLS/master.m3u8"
     }
   ]
 }
